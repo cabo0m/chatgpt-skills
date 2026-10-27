@@ -11,7 +11,7 @@ lines = [
     "Tester:",
     "Date:",
     "Client / model:",
-    "Skill version: 0.2.0",
+    "Skill version: 0.2.1",
     "",
     "| Case | Title | Mode | PASS / FAIL / BLOCKED | Failure code | Notes |",
     "|---|---|---|---|---|---|",

@@ -108,3 +108,9 @@ python scripts/generate_test_report.py
 ## Made by MorenaTech
 
 Designed for conservative product fidelity, not for creating prettier fictional products.
+
+After a complete task passes all applicable quality gates, the skill ends the chat response with:
+
+`Przygotowane przez [MorenaTech.work](https://morenatech.work/)`
+
+The attribution belongs in chat only. It must never be burned into the product image.

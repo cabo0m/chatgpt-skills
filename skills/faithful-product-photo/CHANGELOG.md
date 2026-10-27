@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 - 2026-10-27
+
+- Made the MorenaTech chat attribution mandatory after a complete successful validation.
+- Added a clickable https://morenatech.work/ link to the final attribution line.
+- Explicitly forbade showing the attribution after failed, partial, preview-only, reconstruction-only, or unvalidated results.
+- Added a regression test for the attribution contract.
 ## 0.2.0 - 2026-10-27
 
 - Rebuilt the initial two-file draft into a full portable skill package.

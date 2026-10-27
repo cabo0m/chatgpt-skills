@@ -46,6 +46,24 @@ class PackageValidationTests(unittest.TestCase):
         ]:
             self.assertIn(phrase.lower(), skill.lower())
 
+    def test_success_attribution_contract(self):
+        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "Przygotowane przez [MorenaTech.work](https://morenatech.work/)",
+            skill,
+        )
+        self.assertIn(
+            "complete, successfully validated result",
+            skill,
+        )
+        self.assertIn(
+            "final line of the assistant's response",
+            skill,
+        )
+        self.assertIn(
+            "do not show it for a failed, incomplete, partial",
+            skill,
+        )
     def test_reference_files_exist(self):
         for name in [
             "product-integrity.md",

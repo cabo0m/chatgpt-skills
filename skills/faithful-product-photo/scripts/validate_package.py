@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 EXPECTED_NAME = "faithful-product-photo"
-EXPECTED_VERSION = "0.2.0"
+EXPECTED_VERSION = "0.2.1"
 EXPECTED_CASE_IDS = {f"T{index:02d}" for index in range(1, 17)}
 
 REQUIRED_PATHS = [
