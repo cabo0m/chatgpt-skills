@@ -1,0 +1,39 @@
+{
+  "title": "Old Photo Revival test case schema",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "mode",
+    "input_asset",
+    "user_prompt_pl",
+    "user_prompt_en",
+    "must_preserve",
+    "may_change",
+    "must_not_add",
+    "expected_behavior",
+    "expected_output",
+    "risk_notes"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^T[0-9]{2}$"},
+    "title": {"type": "string", "minLength": 3},
+    "mode": {"type": "string", "minLength": 3},
+    "input_asset": {"type": ["null", "string"]},
+    "user_prompt_pl": {"type": "string", "minLength": 3},
+    "user_prompt_en": {"type": "string", "minLength": 3},
+    "must_preserve": {"type": "array", "items": {"type": "string"}},
+    "may_change": {"type": "array", "items": {"type": "string"}},
+    "must_not_add": {"type": "array", "items": {"type": "string"}},
+    "expected_behavior": {"type": "string", "minLength": 3},
+    "expected_output": {
+      "type": "object",
+      "required": ["count", "transparent"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "transparent": {"type": "boolean"}
+      }
+    },
+    "risk_notes": {"type": "array", "items": {"type": "string"}}
+  }
+}
