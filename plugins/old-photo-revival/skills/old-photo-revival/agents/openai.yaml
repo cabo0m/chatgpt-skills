@@ -1,0 +1,8 @@
+interface:
+  display_name: Old Photo Revival
+  short_description: Restore old photographs while preserving identity and historical evidence
+  default_prompt: Restore the supplied old photograph conservatively while preserving identity, age, pose, clothing, composition, and historical character.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true

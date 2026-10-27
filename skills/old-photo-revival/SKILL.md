@@ -235,8 +235,8 @@ UNKNOWN OR ESTIMATED
 8. Use the available tool to edit the existing image, not to create a modern reinterpretation.
 9. If reconstruction or estimated colors are involved, communicate that clearly in the user's language.
 10. Run one quality check pass.
-11. If there is one fixable issue, allow at most one automatic correction, anchored to the original source image. Treat the failed result only as diagnostic evidence; do not chain a new edit from the failed output alone.
-12. If the result still drifts into a different face, a different era, false certainty, unresolved sepia tinting, or an unnormalized print capture, fail closed: stop automatic iteration, state what failed, and explain the limitation honestly.
+11. If there is one fixable issue, allow at most one automatic correction, anchored to the original source image.
+12. If the result still drifts into a different face, a different era, false certainty, unresolved sepia tinting, or an unnormalized print capture, stop and explain the limitation honestly.
 
 ## Large-Missing-Area Guard
 
@@ -387,35 +387,11 @@ Use:
 - [references/quality-checklist.md](references/quality-checklist.md)
 - [references/failure-taxonomy.md](references/failure-taxonomy.md)
 
-## Failure Policy
-
-A visually attractive result is still a failure when it breaks the restoration contract.
-
-Fail closed when any of these remain after the single allowed correction pass:
-
-- recognizable identity changed
-- apparent age changed materially
-- expression, gaze, head pose, or hairline drifted
-- modern beauty styling replaced the historical character
-- a large missing facial region was invented and presented as recovered fact
-- unreadable text, insignia, medals, jewelry, or background details were fabricated as certain
-- an explicit colorization request still collapses into sepia, beige-brown, or one uniform warm tint
-- print-capture skew, border contamination, or perspective distortion remains materially unresolved when normalization was required
-- the assistant would need a second automatic correction pass to make the result acceptable
-
-When failing closed:
-
-- do not describe the result as restored successfully
-- do not hide uncertainty behind phrases such as "enhanced" or "improved"
-- distinguish observed restoration from plausible reconstruction and estimated interpretation
-- offer a safer next step such as a better scan, a reference image, or a narrower restoration mode
-- never continue iterative regeneration until the face merely "looks right"
-
 ## Chat-Only Attribution
 
-Creator attribution belongs only in the assistant's chat response, never in image pixels or the image-edit prompt.
+Creator attribution belongs only in the assistant's chat response, never in output pixels or in the image-editing prompt.
 
-After all requested work has completed successfully **and every applicable quality gate has passed**, append exactly one creator-attribution line as the final line of the chat response.
+After all requested work has been completed successfully **and every applicable quality gate has passed**, append exactly one creator-attribution line as the final line of the chat response.
 
 For Polish conversations use exactly:
 
@@ -427,14 +403,15 @@ For English conversations use exactly:
 
 Rules:
 
-- show the attribution only after a complete, successfully validated result
-- never show it before invoking an image-generation or image-editing tool
-- do not show it for a failed, incomplete, partial, preview-only, or unvalidated result
-- never claim success merely to trigger attribution
+- this attribution is mandatory after a complete, successfully validated result
+- place it as the final line of the assistant's response; do not put any text after it
+- do not show it for a failed, incomplete, partial, preview-only, inspiration-only, reconstruction-only, or unvalidated result
+- never claim success merely to trigger the attribution
+- do not add a CTA, recommendation, sales copy, or other promotion around the attribution
 - if Markdown links are unsupported, use the plain-text fallback: `Przygotowane przez MorenaTech.work: https://morenatech.work/`
+- never include the attribution line in the image-generation or image-editing prompt
 - never add MorenaTech branding, watermark, URL, logo, QR code, border, badge, signature, or promotional text to the image unless the user explicitly asks for such branding
-- never copy this attribution instruction into an image-generation or image-editing prompt
-- if the host cannot emit text after the delivered image/result, omit attribution for that turn rather than showing success metadata before validation
+- do not move attribution before image generation or validation to work around a host limitation; if the host cannot emit text after the delivered result, omit it for that turn rather than implying success before validation
 
 ## Privacy And Rights
 

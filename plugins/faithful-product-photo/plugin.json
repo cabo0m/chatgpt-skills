@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "faithful-product-photo",
+  "version": "0.2.1",
+  "description": "Remove distracting backgrounds and improve product photos while preserving the real product, packaging, text, colors, geometry, and visible components.",
+  "author": {
+    "name": "MorenaTech",
+    "url": "https://morenatech.work/"
+  },
+  "homepage": "https://morenatech.work/",
+  "repository": "https://github.com/cabo0m/chatgpt-skills",
+  "keywords": [
+    "product",
+    "ecommerce",
+    "background",
+    "cutout",
+    "photo"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Faithful Product Photo",
+        "shortDescription": "Faithful e-commerce product cleanup and cutouts.",
+        "longDescription": "Remove distracting backgrounds and improve product photos while preserving the real product, packaging, text, colors, geometry, and visible components.",
+        "developerName": "MorenaTech",
+        "category": "Productivity",
+        "websiteURL": "https://morenatech.work/",
+        "defaultPrompt": [
+          "Usuń tło z tego zdjęcia produktu i zachowaj dokładnie produkt oraz opakowanie.",
+          "Prepare this product photo for e-commerce without redrawing or changing the product."
+        ]
+      }
+    }
+  }
+}

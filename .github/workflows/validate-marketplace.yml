@@ -1,0 +1,33 @@
+name: Validate MorenaTech Skills Marketplace
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate marketplace packages
+        run: python tools/validate_marketplace.py
+
+      - name: Validate skill packages
+        shell: bash
+        run: |
+          set -e
+          for skill in business-portrait-studio faithful-product-photo old-photo-revival room-rescue still-me-portrait strict-alpha-cutout; do
+            echo "=== $skill ==="
+            if [ -f "skills/$skill/scripts/validate_package.py" ]; then
+              python "skills/$skill/scripts/validate_package.py" "skills/$skill"
+            fi
+            if [ -d "skills/$skill/tests/static" ]; then
+              python -m unittest discover "skills/$skill/tests/static" -v
+            fi
+          done

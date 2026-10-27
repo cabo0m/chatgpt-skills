@@ -1,0 +1,8 @@
+interface:
+  display_name: Still Me Portrait
+  short_description: Natural portrait edits that preserve the same person's identity
+  default_prompt: Improve the supplied portrait naturally while preserving the same person's identity, age, facial geometry, hair, glasses, and proportions.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true

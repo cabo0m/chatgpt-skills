@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "business-portrait-studio",
+  "version": "0.3.0",
+  "description": "Turn an existing portrait into a polished business photo while preserving identity, age, facial geometry, and recognizable features.",
+  "author": {
+    "name": "MorenaTech",
+    "url": "https://morenatech.work/"
+  },
+  "homepage": "https://morenatech.work/",
+  "repository": "https://github.com/cabo0m/chatgpt-skills",
+  "keywords": [
+    "portrait",
+    "business",
+    "headshot",
+    "linkedin",
+    "photo"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Business Portrait Studio",
+        "shortDescription": "Professional portraits that preserve the real person.",
+        "longDescription": "Turn an existing portrait into a polished business photo while preserving identity, age, facial geometry, and recognizable features.",
+        "developerName": "MorenaTech",
+        "category": "Productivity",
+        "websiteURL": "https://morenatech.work/",
+        "defaultPrompt": [
+          "Przerób to zdjęcie na profesjonalny portret biznesowy, zachowując moją tożsamość.",
+          "Create a professional business portrait from this photo without changing my identity."
+        ]
+      }
+    }
+  }
+}

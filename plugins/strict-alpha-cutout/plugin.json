@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "strict-alpha-cutout",
+  "version": "0.2.0",
+  "description": "Remove backgrounds and produce technically transparent PNG assets with strict alpha rules instead of fake white or checkerboard backgrounds.",
+  "author": {
+    "name": "MorenaTech",
+    "url": "https://morenatech.work/"
+  },
+  "homepage": "https://morenatech.work/",
+  "repository": "https://github.com/cabo0m/chatgpt-skills",
+  "keywords": [
+    "alpha",
+    "transparent",
+    "png",
+    "cutout",
+    "background-removal"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Strict Alpha Cutout",
+        "shortDescription": "Production-ready transparent PNG cutouts with real alpha.",
+        "longDescription": "Remove backgrounds and produce technically transparent PNG assets with strict alpha rules instead of fake white or checkerboard backgrounds.",
+        "developerName": "MorenaTech",
+        "category": "Productivity",
+        "websiteURL": "https://morenatech.work/",
+        "defaultPrompt": [
+          "Usuń tło i zwróć prawdziwy przezroczysty PNG z poprawnym kanałem alfa.",
+          "Remove the background and return a real transparent PNG with a valid alpha channel."
+        ]
+      }
+    }
+  }
+}

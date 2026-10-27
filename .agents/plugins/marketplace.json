@@ -1,0 +1,80 @@
+{
+  "name": "morenatech-skills",
+  "interface": {
+    "displayName": "MorenaTech Skills"
+  },
+  "plugins": [
+    {
+      "name": "business-portrait-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/business-portrait-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "faithful-product-photo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/faithful-product-photo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "old-photo-revival",
+      "source": {
+        "source": "local",
+        "path": "./plugins/old-photo-revival"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "room-rescue",
+      "source": {
+        "source": "local",
+        "path": "./plugins/room-rescue"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "still-me-portrait",
+      "source": {
+        "source": "local",
+        "path": "./plugins/still-me-portrait"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "strict-alpha-cutout",
+      "source": {
+        "source": "local",
+        "path": "./plugins/strict-alpha-cutout"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

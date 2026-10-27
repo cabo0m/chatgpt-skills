@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "old-photo-revival",
+  "version": "0.2.0",
+  "description": "Repair, restore, and optionally colorize old photographs while preserving identity, apparent age, composition, and historical character.",
+  "author": {
+    "name": "MorenaTech",
+    "url": "https://morenatech.work/"
+  },
+  "homepage": "https://morenatech.work/",
+  "repository": "https://github.com/cabo0m/chatgpt-skills",
+  "keywords": [
+    "restoration",
+    "old-photo",
+    "colorization",
+    "history",
+    "portrait"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Old Photo Revival",
+        "shortDescription": "Restore and colorize old photographs conservatively.",
+        "longDescription": "Repair, restore, and optionally colorize old photographs while preserving identity, apparent age, composition, and historical character.",
+        "developerName": "MorenaTech",
+        "category": "Productivity",
+        "websiteURL": "https://morenatech.work/",
+        "defaultPrompt": [
+          "Odrestauruj to stare zdjęcie, zachowując twarz, wiek i charakter epoki.",
+          "Restore this old photograph conservatively and preserve the person's identity and era."
+        ]
+      }
+    }
+  }
+}

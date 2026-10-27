@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "room-rescue",
+  "version": "0.2.0",
+  "description": "Declutter, brighten, and restyle an existing room while preserving its real geometry, fixed architecture, circulation, and recognizable layout.",
+  "author": {
+    "name": "MorenaTech",
+    "url": "https://morenatech.work/"
+  },
+  "homepage": "https://morenatech.work/",
+  "repository": "https://github.com/cabo0m/chatgpt-skills",
+  "keywords": [
+    "interior",
+    "room",
+    "design",
+    "declutter",
+    "renovation"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Room Rescue",
+        "shortDescription": "Refresh a real room without inventing a different one.",
+        "longDescription": "Declutter, brighten, and restyle an existing room while preserving its real geometry, fixed architecture, circulation, and recognizable layout.",
+        "developerName": "MorenaTech",
+        "category": "Productivity",
+        "websiteURL": "https://morenatech.work/",
+        "defaultPrompt": [
+          "Odśwież ten pokój bez zmiany jego geometrii, okien, drzwi i stałej zabudowy.",
+          "Restyle this room without changing its real architecture or inventing extra space."
+        ]
+      }
+    }
+  }
+}

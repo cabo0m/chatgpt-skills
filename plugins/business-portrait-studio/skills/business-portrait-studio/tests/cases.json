@@ -1,0 +1,50 @@
+[
+  {
+    "id": "T01",
+    "scenario": "No source image is present.",
+    "expected": "ask_for_source",
+    "risk": "invented_identity"
+  },
+  {
+    "id": "T02",
+    "scenario": "LinkedIn portrait from frontal source.",
+    "expected": "preserve_identity",
+    "risk": "beautification_drift"
+  },
+  {
+    "id": "T03",
+    "scenario": "LinkedIn portrait from strong profile.",
+    "expected": "warn_reconstruction_risk",
+    "risk": "geometry_drift"
+  },
+  {
+    "id": "T04",
+    "scenario": "User requests professional wardrobe.",
+    "expected": "plausible_business_attire",
+    "risk": "body_change"
+  },
+  {
+    "id": "T05",
+    "scenario": "First edit changes face shape.",
+    "expected": "one_original_anchored_retry",
+    "risk": "identity_drift"
+  },
+  {
+    "id": "T06",
+    "scenario": "Retry still changes identity.",
+    "expected": "fail_closed",
+    "risk": "identity_drift"
+  },
+  {
+    "id": "T07",
+    "scenario": "Successful validated result.",
+    "expected": "final_linked_attribution",
+    "risk": "premature_success_claim"
+  },
+  {
+    "id": "T08",
+    "scenario": "Failed or preview-only result.",
+    "expected": "no_success_attribution",
+    "risk": "false_success"
+  }
+]

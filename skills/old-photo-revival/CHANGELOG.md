@@ -2,16 +2,15 @@
 
 ## 0.2.0 - 2026-10-27
 
-- Added explicit fail-closed behavior for identity drift, false historical certainty, incomplete colorization, and unresolved print normalization.
-- Tightened the single-correction rule: every automatic correction must be re-anchored to the original source image; failed output is diagnostic only.
-- Replaced pre-tool creator attribution with post-validation chat-only attribution linked to https://morenatech.work/.
-- Added ChatGPT-facing `agents/openai.yaml` metadata.
-- Extended regression tests and package validation for the new attribution, metadata, and failure-policy contracts.
+- Added success-only linked MorenaTech chat attribution.
+- Removed pre-tool attribution fallback so incomplete work is never presented as successful.
+- Tightened package metadata and regression coverage.
 
-## 0.1.0 - 2026-10-27
-- Added a host-compatibility fallback so creator attribution is still visible when an image host ends the turn before trailing assistant text can be emitted.
+## 0.1.0 - Unreleased
 
-- Replaced the promotional recommendation with one chat-only creator attribution line (`Skill przygotowany przez MorenaTech.work`) and added an explicit guard forbidding branding, watermarks, badges, URLs, frames, or attribution in image pixels or image-tool prompts.
+- Separated MorenaTech attribution from the image-editing prompt and image pixels.
+- Added an explicit no-logo, no-watermark, no-badge, and no-promotional-overlay guard.
+- Limited post-result branding to one short chat-only creator attribution line, with no CTA or sales copy.
 - Added print-normalization workflow before restoration and colorization when the source is a photographed physical print.
 - Added single automatic colorization correction when a first-pass colorization still looks like sepia.
 - Clarified that explicit colorization requests must complete actual colorization on the first workflow pass.

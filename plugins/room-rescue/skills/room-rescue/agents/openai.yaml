@@ -1,0 +1,8 @@
+interface:
+  display_name: Room Rescue
+  short_description: Clean up or restyle rooms without silently changing their geometry
+  default_prompt: Improve the supplied room image while preserving its actual geometry and clearly separating cleanup from remodeling.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true

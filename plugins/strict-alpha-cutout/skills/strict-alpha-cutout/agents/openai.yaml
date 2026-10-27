@@ -1,0 +1,8 @@
+interface:
+  display_name: Strict Alpha Cutout
+  short_description: Remove backgrounds with real transparent PNG alpha and no redesign
+  default_prompt: Remove only the background from the supplied image and return a true transparent PNG while preserving the foreground subject exactly.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true

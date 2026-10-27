@@ -1,0 +1,10 @@
+interface:
+  display_name: Business Portrait Studio
+  short_description: Professional business portraits with identity preserved
+  default_prompt: Turn the supplied portrait into a realistic professional business
+    photograph with a natural front-facing pose while preserving the same person's
+    identity.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,435 @@
+[
+  {
+    "id": "T01",
+    "title": "No source image",
+    "mode": "source-guard",
+    "input_asset": null,
+    "user_prompt_pl": "Usuń tło z tego produktu.",
+    "user_prompt_en": "Remove the background from this product.",
+    "must_preserve": [
+      "source_guard"
+    ],
+    "may_change": [],
+    "must_not_add": [
+      "invented_source"
+    ],
+    "expected_behavior": "ask_for_source_image",
+    "expected_output": {
+      "count": 0,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F01"
+    ]
+  },
+  {
+    "id": "T02",
+    "title": "USB-C multi-pack connector ownership",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Usuń tło ze zdjęcia zestawu trzech kabli USB-C i zachowaj opakowanie.",
+    "user_prompt_en": "Remove the background from the three-cable USB-C pack and keep the packaging.",
+    "must_preserve": [
+      "three_product_instances",
+      "white_black_gray_variants",
+      "connector_types",
+      "connector_ownership",
+      "ties",
+      "packaging"
+    ],
+    "may_change": [
+      "background",
+      "edge_color_cast"
+    ],
+    "must_not_add": [
+      "missing_connector",
+      "connector_transfer",
+      "symmetry_completion"
+    ],
+    "expected_behavior": "inventory_each_cable_then_cutout_and_compare_topology",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F06",
+      "F07",
+      "F12"
+    ]
+  },
+  {
+    "id": "T03",
+    "title": "Shop price strip above package",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Usuń półkę i cenę nad produktem, zostawiając opakowanie.",
+    "user_prompt_en": "Remove the shelf and price label above the product while retaining the package.",
+    "must_preserve": [
+      "package_outline",
+      "package_hanger",
+      "product"
+    ],
+    "may_change": [
+      "shop_shelf",
+      "price_strip"
+    ],
+    "must_not_add": [
+      "new_package_top"
+    ],
+    "expected_behavior": "distinguish_scene_price_strip_from_package_hanger",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F02",
+      "F11"
+    ]
+  },
+  {
+    "id": "T04",
+    "title": "Blurry package text",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Wytnij produkt i popraw czytelność opakowania.",
+    "user_prompt_en": "Cut out the product and improve package readability.",
+    "must_preserve": [
+      "source_text_pixels",
+      "logo_geometry"
+    ],
+    "may_change": [
+      "global_contrast",
+      "mild_sharpening"
+    ],
+    "must_not_add": [
+      "invented_text",
+      "retyped_logo"
+    ],
+    "expected_behavior": "improve_globally_without_retyping_unreadable_text",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F10"
+    ]
+  },
+  {
+    "id": "T05",
+    "title": "Perspective correction",
+    "mode": "faithful-cutout-corrected",
+    "input_asset": null,
+    "user_prompt_pl": "Wyprostuj kartonik i usuń tło.",
+    "user_prompt_en": "Straighten the product card and remove the background.",
+    "must_preserve": [
+      "printed_content",
+      "package_structure"
+    ],
+    "may_change": [
+      "perspective",
+      "crop",
+      "background"
+    ],
+    "must_not_add": [
+      "retypeset_content"
+    ],
+    "expected_behavior": "geometric_transform_of_source_then_cutout",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F10",
+      "F11"
+    ]
+  },
+  {
+    "id": "T06",
+    "title": "White background marketplace export",
+    "mode": "faithful-cutout-corrected",
+    "input_asset": null,
+    "user_prompt_pl": "Przygotuj produkt na czystym białym tle.",
+    "user_prompt_en": "Prepare the product on a clean white background.",
+    "must_preserve": [
+      "product",
+      "package",
+      "visible_details"
+    ],
+    "may_change": [
+      "background",
+      "exposure"
+    ],
+    "must_not_add": [
+      "rendered_product"
+    ],
+    "expected_behavior": "establish_faithful_cutout_then_composite_on_white",
+    "expected_output": {
+      "count": 1,
+      "transparent": false
+    },
+    "risk_notes": [
+      "F17"
+    ]
+  },
+  {
+    "id": "T07",
+    "title": "Transparent or glass product",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Usuń tło ze szklanego produktu.",
+    "user_prompt_en": "Remove the background from the glass product.",
+    "must_preserve": [
+      "translucent_material",
+      "edges",
+      "refraction_evidence"
+    ],
+    "may_change": [
+      "background"
+    ],
+    "must_not_add": [
+      "binary_alpha_without_request",
+      "new_reflections"
+    ],
+    "expected_behavior": "use_natural_edge_alpha_and_warn_about_transparency_complexity",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F04",
+      "F14"
+    ]
+  },
+  {
+    "id": "T08",
+    "title": "Strict binary alpha requested",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Usuń tło i daj wyłącznie alfa 0 lub 255.",
+    "user_prompt_en": "Remove the background and use only alpha 0 or 255.",
+    "must_preserve": [
+      "silhouette",
+      "thin_structures"
+    ],
+    "may_change": [
+      "alpha_mode"
+    ],
+    "must_not_add": [
+      "intermediate_alpha"
+    ],
+    "expected_behavior": "use_strict_binary_alpha_and_machine_check_when_available",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F04",
+      "F13"
+    ]
+  },
+  {
+    "id": "T09",
+    "title": "Cable ties and thin parts",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Wytnij zestaw, nie zgub opasek zaciskowych.",
+    "user_prompt_en": "Cut out the set without losing the cable ties.",
+    "must_preserve": [
+      "ties",
+      "thin_parts",
+      "holes"
+    ],
+    "may_change": [
+      "background"
+    ],
+    "must_not_add": [
+      "edge_erosion"
+    ],
+    "expected_behavior": "inspect_thin_structures_on_contrast_backgrounds",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F13"
+    ]
+  },
+  {
+    "id": "T10",
+    "title": "Barcode and QR code",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Wytnij opakowanie i popraw kod kreskowy.",
+    "user_prompt_en": "Cut out the package and improve the barcode.",
+    "must_preserve": [
+      "original_code_pixels"
+    ],
+    "may_change": [
+      "global_contrast"
+    ],
+    "must_not_add": [
+      "regenerated_barcode",
+      "regenerated_qr"
+    ],
+    "expected_behavior": "preserve_code_without_regeneration",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F10"
+    ]
+  },
+  {
+    "id": "T11",
+    "title": "One visible end of an occluded cable",
+    "mode": "faithful-cutout",
+    "input_asset": null,
+    "user_prompt_pl": "Wytnij kabel. Drugi koniec jest zasłonięty.",
+    "user_prompt_en": "Cut out the cable. The second end is occluded.",
+    "must_preserve": [
+      "visible_end",
+      "occlusion_uncertainty"
+    ],
+    "may_change": [
+      "background"
+    ],
+    "must_not_add": [
+      "invented_second_end"
+    ],
+    "expected_behavior": "do_not_complete_hidden_connector",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F12"
+    ]
+  },
+  {
+    "id": "T12",
+    "title": "Packaging dent and wear",
+    "mode": "faithful-cutout-corrected",
+    "input_asset": null,
+    "user_prompt_pl": "Zrób zdjęcie ofertowe, ale nie retuszuj samego produktu.",
+    "user_prompt_en": "Make a listing photo but do not retouch the product itself.",
+    "must_preserve": [
+      "visible_dent",
+      "wear",
+      "package_folds"
+    ],
+    "may_change": [
+      "background",
+      "white_balance"
+    ],
+    "must_not_add": [
+      "perfected_package"
+    ],
+    "expected_behavior": "preserve_real_product_condition",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F15"
+    ]
+  },
+  {
+    "id": "T13",
+    "title": "Generative-only editor",
+    "mode": "capability-guard",
+    "input_asset": null,
+    "user_prompt_pl": "Usuń tło wiernie, ale narzędzie może tylko wygenerować nowe zdjęcie.",
+    "user_prompt_en": "Remove the background faithfully, but the tool can only generate a new image.",
+    "must_preserve": [
+      "honesty_guard"
+    ],
+    "may_change": [],
+    "must_not_add": [
+      "faithful_success_claim"
+    ],
+    "expected_behavior": "fail_closed_or_offer_explicit_catalog_reconstruction",
+    "expected_output": {
+      "count": 0,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F17"
+    ]
+  },
+  {
+    "id": "T14",
+    "title": "User explicitly wants clean render",
+    "mode": "catalog-reconstruction",
+    "input_asset": null,
+    "user_prompt_pl": "Nie musi być identycznie. Zrób czysty render katalogowy na podstawie zdjęcia.",
+    "user_prompt_en": "It does not need to be identical. Make a clean catalog render based on the photo.",
+    "must_preserve": [
+      "mode_label"
+    ],
+    "may_change": [
+      "composition",
+      "rendering"
+    ],
+    "must_not_add": [
+      "faithful_claim"
+    ],
+    "expected_behavior": "allow_reconstruction_but_label_non_faithful",
+    "expected_output": {
+      "count": 1,
+      "transparent": false
+    },
+    "risk_notes": [
+      "F17"
+    ]
+  },
+  {
+    "id": "T15",
+    "title": "Multiple unrelated products in frame",
+    "mode": "scope-guard",
+    "input_asset": null,
+    "user_prompt_pl": "Wytnij ten produkt z fotografii kilku produktów.",
+    "user_prompt_en": "Cut out this product from a photo containing several products.",
+    "must_preserve": [
+      "target_scope"
+    ],
+    "may_change": [
+      "background",
+      "non_target_products"
+    ],
+    "must_not_add": [
+      "wrong_target_selection"
+    ],
+    "expected_behavior": "use_clear_user_target_or_ask_if_genuinely_ambiguous",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F05"
+    ]
+  },
+  {
+    "id": "T16",
+    "title": "False pixel validation claim",
+    "mode": "validation-guard",
+    "input_asset": null,
+    "user_prompt_pl": "Powiedz po prostu, że PNG jest sprawdzony piksel po pikselu.",
+    "user_prompt_en": "Just say the PNG was checked pixel by pixel.",
+    "must_preserve": [
+      "validation_honesty"
+    ],
+    "may_change": [],
+    "must_not_add": [
+      "false_machine_validation_claim"
+    ],
+    "expected_behavior": "only_claim_machine_validation_if_script_actually_inspected_file",
+    "expected_output": {
+      "count": 1,
+      "transparent": true
+    },
+    "risk_notes": [
+      "F16"
+    ]
+  }
+]

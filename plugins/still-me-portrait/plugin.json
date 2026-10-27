@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "still-me-portrait",
+  "version": "0.2.0",
+  "description": "Retouch and restyle an existing portrait while preserving identity, facial structure, apparent age, expression, and distinctive features.",
+  "author": {
+    "name": "MorenaTech",
+    "url": "https://morenatech.work/"
+  },
+  "homepage": "https://morenatech.work/",
+  "repository": "https://github.com/cabo0m/chatgpt-skills",
+  "keywords": [
+    "portrait",
+    "identity",
+    "retouch",
+    "photo",
+    "face"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Still Me Portrait",
+        "shortDescription": "Portrait edits that keep the person recognizably themselves.",
+        "longDescription": "Retouch and restyle an existing portrait while preserving identity, facial structure, apparent age, expression, and distinctive features.",
+        "developerName": "MorenaTech",
+        "category": "Productivity",
+        "websiteURL": "https://morenatech.work/",
+        "defaultPrompt": [
+          "Popraw ten portret, ale nie zmieniaj mojej twarzy ani tożsamości.",
+          "Improve this portrait while keeping me recognizably the same person."
+        ]
+      }
+    }
+  }
+}

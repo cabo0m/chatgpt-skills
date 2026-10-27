@@ -31,7 +31,7 @@ When the source is a photographed paper print rather than a clean scan, the work
 - restore the image
 - colorize or revive it
 - run a quality gate
-- allow at most one automatic correction, always re-anchored to the original source rather than the failed output
+- allow at most one automatic correction
 
 That means the skill should correct accidental border tint, tilt, and mild perspective issues before deeper portrait work.
 
@@ -94,14 +94,7 @@ python scripts/inspect_image.py input.jpg
 - `examples/` for prompts, uncertainty messages, and behavior examples
 - `tests/` for text-only corpus and manual review templates
 - `scripts/` for deterministic package validation and read-only image inspection
-- `agents/openai.yaml` for ChatGPT-facing skill metadata
 
 ## Made by MorenaTech
 
 Built as a careful scaffold for manual visual testing of old-photo restoration workflows, not as a promise of automatic historical truth.
-
-After a complete task passes all applicable quality gates, the skill ends the chat response with:
-
-`Przygotowane przez [MorenaTech.work](https://morenatech.work/)`
-
-The attribution belongs in chat only and is never burned into the restored photograph.

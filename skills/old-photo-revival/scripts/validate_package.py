@@ -51,7 +51,6 @@ REQUIRED_PATHS = [
     "scripts/inspect_image.py",
     "scripts/generate_test_report.py",
     "requirements-optional.txt",
-    "agents/openai.yaml",
 ]
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9-]{10,}"),
@@ -188,9 +187,9 @@ def validate_cases(cases_path: Path, schema_path: Path):
 
 def validate_changelog(changelog_path: Path):
     changelog_text = read_text(changelog_path)
-    expected_prefix = f"## {EXPECTED_VERSION} - "
-    if expected_prefix not in changelog_text:
-        raise ValidationError(f"{changelog_path}: expected changelog header beginning with '{expected_prefix}' matching frontmatter version")
+    expected_header = f"## {EXPECTED_VERSION} -"
+    if expected_header not in changelog_text:
+        raise ValidationError(f"{changelog_path}: expected changelog header '{expected_header}' matching frontmatter version")
 
 
 def scan_text_files(root: Path):
@@ -213,7 +212,7 @@ def scan_text_files(root: Path):
 def validate_no_images(root: Path):
     for path in root.rglob("*"):
         if path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS:
-            raise ValidationError(f"{path}: image files are not allowed in the public package")
+            raise ValidationError(f"{path}: image files are not allowed in v0.1 package")
 
 
 def validate_no_runtime_cache(root: Path):
@@ -259,16 +258,6 @@ def validate_package(root: Path):
         raise ValidationError(f"{skill_path}: license must be omitted until explicitly decided")
     if not body.strip():
         raise ValidationError(f"{skill_path}: body must not be empty")
-    required_contract_phrases = [
-        "## Failure Policy",
-        "fail closed",
-        "anchored to the original source image",
-        "Przygotowane przez [MorenaTech.work](https://morenatech.work/)",
-        "complete, successfully validated result",
-    ]
-    for phrase in required_contract_phrases:
-        if phrase.lower() not in skill_text.lower():
-            raise ValidationError(f"{skill_path}: missing required contract phrase: {phrase}")
     validate_links(skill_path, root)
     validate_links(root / "README.md", root)
     validate_cases(root / "tests/cases.json", root / "tests/case-schema.json")

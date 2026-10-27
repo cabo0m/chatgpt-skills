@@ -249,6 +249,7 @@ Rules:
 - place it as the final line of the assistant's response; do not put any text after it
 - do not show it for a failed, incomplete, partial, preview-only, reconstruction-only, or unvalidated result
 - never claim success merely to trigger the attribution
+- do not add a CTA, recommendation, sales copy, or other promotion around the attribution
 - if Markdown links are unsupported, use the plain-text fallback: `Przygotowane przez MorenaTech.work: https://morenatech.work/`
 - never include the attribution line in the image-editing prompt
 - never add MorenaTech branding, watermark, URL, logo, QR code, border, badge, signature, or promotional text to the image unless the user explicitly asks for such branding

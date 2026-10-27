@@ -17,7 +17,7 @@ def write_file(path: Path, content: str) -> None:
 
 
 def build_base_package(root: Path) -> None:
-    for relative in ["references", "examples", "tests/static", "scripts", "agents"]:
+    for relative in ["references", "examples", "tests/static", "scripts"]:
         (root / relative).mkdir(parents=True, exist_ok=True)
 
     write_file(
@@ -34,17 +34,11 @@ def build_base_package(root: Path) -> None:
             ---
 
             See [reference](references/identity-preservation.md).
-
-            ## Failure Policy
-            Fail closed after one correction anchored to the original source image.
-
-            ## Chat-Only Attribution
-            After a complete, successfully validated result: `Przygotowane przez [MorenaTech.work](https://morenatech.work/)`
             """
         ),
     )
     write_file(root / "README.md", "Read [skill](SKILL.md).\n")
-    write_file(root / "CHANGELOG.md", "## 0.2.0 - 2026-10-27\n\n- Initial release.\n")
+    write_file(root / "CHANGELOG.md", "## 0.2.0 - Unreleased\n\n- Initial release.\n")
     write_file(root / "references/restoration-modes.md", "# Modes\n")
     write_file(root / "references/identity-preservation.md", "# Identity\n")
     write_file(root / "references/reconstruction-and-uncertainty.md", "# Uncertainty\n")
@@ -82,10 +76,6 @@ def build_base_package(root: Path) -> None:
     write_file(root / "scripts/inspect_image.py", "# placeholder inspector\n")
     write_file(root / "scripts/generate_test_report.py", "# placeholder report generator\n")
     write_file(root / "requirements-optional.txt", "Pillow==12.3.0\n")
-    write_file(
-        root / "agents/openai.yaml",
-        "interface:\n  display_name: Old Photo Revival\npolicy:\n  allow_implicit_invocation: true\n  products:\n  - chatgpt\n",
-    )
     write_file(
         root / "tests/case-schema.json",
         json.dumps(
@@ -285,30 +275,11 @@ class ValidatePackageTest(unittest.TestCase):
         result = self.run_validator(root)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("CHANGELOG", result.stdout)
-
     def test_chat_only_attribution_contract(self):
         skill = (PACKAGE_ROOT / "SKILL.md").read_text(encoding="utf-8")
-        lower = skill.lower()
         self.assertIn("## Chat-Only Attribution", skill)
         self.assertIn("Przygotowane przez [MorenaTech.work](https://morenatech.work/)", skill)
-        self.assertIn("complete, successfully validated result", lower)
-        self.assertIn("final line of the chat response", lower)
-        self.assertIn("never show it before invoking", lower)
-        self.assertIn("do not show it for a failed, incomplete, partial", lower)
-        self.assertIn("never add morenatech branding", lower)
-        self.assertIn("never copy this attribution instruction", lower)
-
-    def test_failure_policy_is_fail_closed_and_original_anchored(self):
-        skill = (PACKAGE_ROOT / "SKILL.md").read_text(encoding="utf-8")
-        lower = skill.lower()
-        self.assertIn("## Failure Policy", skill)
-        self.assertIn("fail closed", lower)
-        self.assertIn("anchored to the original source image", lower)
-        self.assertIn("do not chain a new edit from the failed output alone", lower)
-        self.assertIn("never continue iterative regeneration", lower)
-
-    def test_openai_agent_metadata_exists(self):
-        metadata = (PACKAGE_ROOT / "agents/openai.yaml").read_text(encoding="utf-8")
-        self.assertIn("display_name: Old Photo Revival", metadata)
-        self.assertIn("allow_implicit_invocation: true", metadata)
-        self.assertIn("- chatgpt", metadata)
+        self.assertIn("never add MorenaTech branding", skill)
+        self.assertIn("never include the attribution line in the image-generation or image-editing prompt", skill)
+        self.assertIn("do not add a CTA, recommendation, sales copy", skill)
+        self.assertIn("https://morenatech.work/", skill)

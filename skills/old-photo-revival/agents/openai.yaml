@@ -1,8 +1,8 @@
 interface:
   display_name: Old Photo Revival
-  short_description: Conservative restoration and colorization of old photographs
-  default_prompt: Restore the supplied old photograph conservatively. Preserve identity, apparent age, expression, pose, clothing, composition, and historical character. Distinguish observed restoration from plausible reconstruction and estimated color, use at most one correction pass anchored to the original source, and fail closed rather than drifting into a different face or era.
+  short_description: Restore old photographs while preserving identity and historical evidence
+  default_prompt: Restore the supplied old photograph conservatively while preserving identity, age, pose, clothing, composition, and historical character.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
 policy:
   allow_implicit_invocation: true
-  products:
-  - chatgpt
