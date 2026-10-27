@@ -1,0 +1,10 @@
+interface:
+  display_name: Faithful Product Photo
+  short_description: Faithful e-commerce cutouts without product hallucination
+  default_prompt: Remove the background from the supplied product photo while preserving the real product, visible packaging, text, logos, colors, connectors, and component ownership. Return a real transparent PNG and fail closed rather than redrawing product details.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true
+  products:
+  - chatgpt

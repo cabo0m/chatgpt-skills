@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Faithful Product Photo">
+  <rect width="128" height="128" rx="24" fill="#ffffff"/>
+  <path d="M30 34h68v64H30z" fill="none" stroke="#111111" stroke-width="7"/>
+  <path d="M43 54h42M43 70h30M43 86h22" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+  <path d="M96 18v22M85 29h22" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+</svg>
