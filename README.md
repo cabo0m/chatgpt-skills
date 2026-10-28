@@ -9,11 +9,11 @@ Repozytorium jest przygotowane jako **repo marketplace** zgodny z aktualnym form
 | Plugin | Do czego służy | Wersja |
 | --- | --- | --- |
 | [Business Portrait Studio](plugins/business-portrait-studio/) | Profesjonalne portrety biznesowe z zachowaniem tożsamości | 0.3.0 |
-| [Faithful Product Photo](plugins/faithful-product-photo/) | Wierna obróbka zdjęć produktowych i usuwanie tła | 0.2.1 |
-| [Old Photo Revival](plugins/old-photo-revival/) | Renowacja i ostrożna koloryzacja starych fotografii | 0.2.0 |
-| [Room Rescue](plugins/room-rescue/) | Odświeżanie wnętrz bez wymyślania innego pomieszczenia | 0.2.0 |
-| [Still Me Portrait](plugins/still-me-portrait/) | Retusz portretu bez zmiany osoby | 0.2.0 |
-| [Strict Alpha Cutout](plugins/strict-alpha-cutout/) | Prawdziwy przezroczysty PNG i rygorystyczny kanał alfa | 0.2.0 |
+| [Faithful Product Photo](plugins/faithful-product-photo/) | Wierna obróbka zdjęć produktowych i usuwanie tła | 0.2.2 |
+| [Old Photo Revival](plugins/old-photo-revival/) | Renowacja i ostrożna koloryzacja starych fotografii | 0.2.1 |
+| [Room Rescue](plugins/room-rescue/) | Odświeżanie wnętrz bez wymyślania innego pomieszczenia | 0.2.1 |
+| [Still Me Portrait](plugins/still-me-portrait/) | Retusz portretu bez zmiany osoby | 0.2.1 |
+| [Strict Alpha Cutout](plugins/strict-alpha-cutout/) | Prawdziwy przezroczysty PNG i rygorystyczny kanał alfa | 0.2.1 |
 
 ## Dodaj sklep MorenaTech do Codex
 
@@ -34,6 +34,8 @@ codex plugin add faithful-product-photo@morenatech-skills
 ~~~
 
 Analogicznie możesz podać nazwę dowolnego pluginu z tabeli.
+
+Plugin zawiera skill, ale jest instalowany osobno od samodzielnych skilli użytkownika. Jeśli chcesz dodać skill bezpośrednio do listy skilli Codexa, poproś Codexa na przykład: „Zainstaluj skill `faithful-product-photo` z `https://github.com/cabo0m/chatgpt-skills/tree/main/skills/faithful-product-photo`”. Po instalacji rozpocznij nową turę; jeśli skill nadal nie jest widoczny, odśwież aplikację lub rozpocznij nowy czat.
 
 Po aktualizacji repozytorium odśwież źródło:
 

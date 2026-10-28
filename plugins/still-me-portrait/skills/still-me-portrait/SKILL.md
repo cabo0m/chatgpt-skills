@@ -1,13 +1,14 @@
 ---
 name: still-me-portrait
 description: Conservatively retouch and edit an existing portrait while preserving the same person's facial geometry, apparent age, natural skin texture, hair, glasses, distinctive features, and body proportions. Use for natural portrait retouching, professional headshots, background cleanup or removal, transparent PNG export, lighting fixes, and glasses-glare reduction. Do not use for fictional people, major identity changes, stylization, de-aging, body reshaping, or edits without a usable source image.
-compatibility: Requires an agent client with image-editing support. Optional Python 3.11 and Pillow are used only for package and PNG alpha validation.
 metadata:
   author: MorenaTech
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Still Me Portrait
+
+Requires an agent client with image-editing support. Optional Python 3.11 and Pillow are used only for package and PNG alpha validation.
 
 Use this skill when the user wants to improve an existing portrait without changing who the person is.
 

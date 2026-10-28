@@ -1,13 +1,14 @@
 ---
 name: strict-alpha-cutout
 description: Remove the background from an existing image and return a true transparent PNG while preserving the original foreground subject exactly. Default strict-binary mode requires background alpha 0 and kept foreground alpha 255 only; any alpha value 1..254 is a failure. Use natural-edge alpha only when the user explicitly requests soft edge transparency. Do not redesign, retouch, restyle, add branding, add objects, or invent content.
-compatibility: Requires an agent client with image-editing support. Optional Python 3.11+ and Pillow are used only for local alpha inspection, canonicalization, and package validation.
 metadata:
   author: MorenaTech
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Strict Alpha Cutout
+
+Requires an agent client with image-editing support. Optional Python 3.11+ and Pillow are used only for local alpha inspection, canonicalization, and package validation.
 
 Use this skill when the user wants a background removed with real transparency and nothing else changed.
 

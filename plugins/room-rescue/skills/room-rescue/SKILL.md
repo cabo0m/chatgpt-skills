@@ -1,13 +1,14 @@
 ---
 name: room-rescue
 description: Restyle, declutter, brighten, and visually refresh an existing room while preserving its real geometry, walls, windows, doors, ceiling height, fixed installations, permanent cabinetry, circulation paths, and recognizable layout. Use for no-remodel room makeovers, budget refreshes, decluttering, color changes, lighting improvements, and redesigns around furniture the user wants to keep. Do not use for architectural plans, structural changes, invented extra space, moving plumbing or gas installations, or redesigns without a usable source image.
-compatibility: Requires an agent client with image-editing support. Optional Python is used only for package validation and manual test reporting.
 metadata:
   author: MorenaTech
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Room Rescue
+
+Requires an agent client with image-editing support. Optional Python is used only for package validation and manual test reporting.
 
 Use this skill when the user wants to refresh a real room without quietly turning it into a different room.
 

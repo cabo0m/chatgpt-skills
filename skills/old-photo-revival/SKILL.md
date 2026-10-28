@@ -1,13 +1,14 @@
 ---
 name: old-photo-revival
 description: Restore, repair, colorize, and naturally revive an existing old photograph while preserving recognizable identity, apparent age at the time of the photograph, expression, pose, clothing, jewelry, composition, and historical character. Use for scratch removal, fading correction, careful colorization, minor reconstruction, and natural portrait revival. Clearly distinguish visible restoration from plausible reconstruction and estimated colors. Do not use for animation, identity changes, de-aging, modern beauty retouching, invented historical details, or edits without a usable source image.
-compatibility: Requires an agent client with image-editing support. Optional Python 3.11+ and Pillow are used only for local file inspection and package validation.
 metadata:
   author: MorenaTech
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Old Photo Revival
+
+Requires an agent client with image-editing support. Optional Python 3.11+ and Pillow are used only for local file inspection and package validation.
 
 Use this skill when the user wants to conservatively restore, colorize, or naturally revive an existing old photograph without redesigning the person, the era, or the historical character of the image.
 

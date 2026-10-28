@@ -93,6 +93,9 @@ def main():
         return result
 
     for name in sorted(EXPECTED):
+        metadata = SKILLS / name / "agents" / "openai.yaml"
+        if metadata.is_file() and re.search(r"(?m)^\s+products\s*:", metadata.read_text(encoding="utf-8")):
+            errors.append(f"{name}: product restriction may hide the skill in Codex")
         source_files = package_files(SKILLS / name)
         bundled_files = package_files(PLUGINS / name / "skills" / name)
         if set(source_files) != set(bundled_files):

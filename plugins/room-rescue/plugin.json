@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "room-rescue",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Declutter, brighten, and restyle an existing room while preserving its real geometry, fixed architecture, circulation, and recognizable layout.",
   "author": {
     "name": "MorenaTech",

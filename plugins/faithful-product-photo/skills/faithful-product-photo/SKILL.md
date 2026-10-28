@@ -1,13 +1,14 @@
 ---
 name: faithful-product-photo
 description: Create faithful e-commerce product cutouts from an existing source image by removing the background while preserving the real product, packaging, visible text, geometry, colors, connectors, labels, and other evidence-backed details. Use for marketplace and webshop product photos where factual product fidelity matters more than visual prettification. Fail closed when the available tool can only redraw or reinterpret the product.
-compatibility: Requires an agent client with image-editing support. For truly faithful mode, the workflow needs masking/segmentation or another way to preserve source pixels. Optional Python 3.11+ and Pillow support local PNG/alpha inspection and package validation.
 metadata:
   author: MorenaTech
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Faithful Product Photo
+
+Faithful mode requires masking or segmentation that preserves source pixels. Python and Pillow can support local alpha inspection.
 
 Use this skill when a user wants a product photograph cleaned up for e-commerce but the result must still depict the **same physical product and the same visible packaging**.
 
@@ -319,7 +320,9 @@ View the cutout over:
 - black
 - strong contrasting color
 
-Look for halos, holes, lost thin structures, background residue, and translucent edge errors.
+Inspect the entire contour at native size and at 200–400% zoom, comparing each side with the original; do not assess only a thumbnail. On light and dark backgrounds look for jagged or stepped edges, protruding background slivers, clipped subject pixels, halos, flat polygon segments, and abrupt changes along long straight or curved edges. Check narrow transitions around shoulders, caps and labels separately. A valid alpha channel or unchanged interior pixels does not establish edge quality.
+
+For ordinary transparency, use a carefully refined, antialiased matte where needed; binary segmentation alone often leaves visible stair steps. Refine the mask against the original pixels, preserving true contours and thin structures. Do not broadly smooth away genuine details, fill all holes blindly, or paint a guessed outline over uncertain geometry. Recheck corrected areas at the same scales and against all three backgrounds. If the source or available tools cannot resolve the boundary without inventing content, report the limitation and fail the visual gate.
 
 ### 10. One correction pass
 
@@ -379,7 +382,7 @@ When transparent output is requested:
 
 ### Visual gate
 
-- no obvious halo
+- no visible jagged contour, protruding background slivers, clipped subject edge, or obvious halo at native size or on magnified inspection
 - no missing thin structures
 - no large residual background islands
 - no cut-off package corners

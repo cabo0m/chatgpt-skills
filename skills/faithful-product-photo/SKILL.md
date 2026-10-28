@@ -3,7 +3,7 @@ name: faithful-product-photo
 description: Create faithful e-commerce product cutouts from an existing source image by removing the background while preserving the real product, packaging, visible text, geometry, colors, connectors, labels, and other evidence-backed details. Use for marketplace and webshop product photos where factual product fidelity matters more than visual prettification. Fail closed when the available tool can only redraw or reinterpret the product.
 metadata:
   author: MorenaTech
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Faithful Product Photo

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "old-photo-revival",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Repair, restore, and optionally colorize old photographs while preserving identity, apparent age, composition, and historical character.",
   "author": {
     "name": "MorenaTech",
